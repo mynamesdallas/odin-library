@@ -1,6 +1,13 @@
+//Modal
 const dialog = document.querySelector("#myDialog");
 const openBtn = document.querySelector("#openModalBtn");
 const closeBtn = document.querySelector("#closeModalBtn");
+
+//Form
+const titleInput = document.querySelector("#addTitle");
+const authorInput = document.querySelector("#addAuthor");
+
+const addBookBtn = document.querySelector("#addBookBtn");
 
 const myLibrary = [];
 
@@ -31,4 +38,10 @@ openBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
     dialog.close();
+});
+
+addBookBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    
 })
