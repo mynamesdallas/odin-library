@@ -39,6 +39,7 @@ header {
 
 .header-bottom input {
     border-radius: 7px;
+    border: 1px solid lightgray;
     padding: 4px;
     margin: 0 4px;
     width: 50%;
@@ -54,8 +55,8 @@ header {
 }
 
 dialog {
-    height: 35%;
-    width: 25%;
+    height: fit-content;
+    width: 50%;
     border: none;
     border-radius: 12px;
     position: fixed;

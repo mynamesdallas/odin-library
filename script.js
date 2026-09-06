@@ -4,9 +4,11 @@ const openBtn = document.querySelector("#openModalBtn");
 const closeBtn = document.querySelector("#closeModalBtn");
 
 //Form
+const bookForm = document.querySelector("#bookForm")
 const titleInput = document.querySelector("#addTitle");
 const authorInput = document.querySelector("#addAuthor");
-
+const pagesInput = document.querySelector("#addPages");
+const readInput = document.querySelector("#addStatus");
 const addBookBtn = document.querySelector("#addBookBtn");
 
 const myLibrary = [];
@@ -43,5 +45,12 @@ closeBtn.addEventListener("click", () => {
 addBookBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    
+    const title = titleInput.value;
+    const author = authorInput.value;
+    const pages = pagesInput.value;
+    const read = readInput.value;
+
+    addBookToLibrary(title, author, pages, read);
+
+    console.log("Updated Library:", myLibrary)
 })
