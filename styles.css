@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 150px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem;
+}
+
+.header-bottom {
+    height: 100%;
+    display: inline-flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.header-bottom input {
+    border-radius: 7px;
+    padding: 4px;
+    margin: 0 4px;
+}
+
+.header-bottom button {
+    padding: 7px 23px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content {
+    height: 100vh;
+    width: 100%;
+    background-color: lightgray;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
