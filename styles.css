@@ -45,7 +45,8 @@ header {
 }
 
 .header-bottom button,
-.card button {
+.card button,
+#addBookBtn {
     padding: 7px 23px;
     border: none;
     border-radius: 5px;
@@ -53,8 +54,8 @@ header {
 }
 
 dialog {
-    height: 75%;
-    width: 50%;
+    height: 35%;
+    width: 25%;
     border: none;
     border-radius: 12px;
     position: fixed;
@@ -62,6 +63,32 @@ dialog {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1rem;
+}
+
+dialog form {
+    padding: 1rem 0;
+}
+
+dialog form label {
+    font-weight: 600;
+}
+
+dialog form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid lightgrey;
+}
+
+.button-row {
+    display: flex;
+    justify-content: end;
+}
+
+#addBookBtn {
+    margin-top: 1rem;
 }
 
 .modal-header {

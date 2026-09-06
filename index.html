@@ -38,7 +38,25 @@
             <button id="closeModalBtn">&times</button>
         </div>
         <form action="">
-            
+            <div>
+                <label for="addTitle">Title: <input type="text" name="title" id="addTtitle"></label>
+            </div>
+            <div>
+                <label for="addAuthor">Author: <input type="text" name="author" id="addAuthor"></label>
+            </div>
+            <div>
+                <label for="addPages">Number of Pages: <input type="number" name="pages" id="addPages"></label>
+            </div>
+            <div>
+                <label for="addStatus">Read Status:</label>
+                <select name="read" id="addStatus">
+                    <option value="read">Read</option>
+                    <option value="not read">Not read</option>
+                </select>
+            </div>
+            <div class="button-row">
+                <button id="addBookBtn">Add To Collection</button>
+            </div>
         </form>
     </dialog>
     <footer>
