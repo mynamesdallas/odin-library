@@ -18,7 +18,7 @@
                 <button id="searchBtn">Search</button>
             </div>
             <div class="add-container">
-                <button id="addBookBtn">Add Book</button>
+                <button id="openModalBtn">Add Book</button>
             </div>
         </div>
     </header>
@@ -32,6 +32,11 @@
             <button class="change-status">Change Status</button>
         </div>
     </div>
+    <dialog id="myDialog">
+        <h2>Add Book to Library</h2>
+        <label for="addAuthor"><input type="text" name="author" id="addAuthor">Author</label>
+        <button id="closeModalBtn">Close</button>
+    </dialog>
     <footer>
         <p>Powered by <a href="#">myNamesDallas</a></p>
     </footer>

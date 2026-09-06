@@ -1,3 +1,7 @@
+const dialog = document.querySelector("#myDialog");
+const openBtn = document.querySelector("#openModalBtn");
+const closeBtn = document.querySelector("#closeModalBtn");
+
 const myLibrary = [];
 
 function Book(title, author, pages, read = false) {
@@ -19,4 +23,12 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 addBookToLibrary("On the Road", "Jack Karouac", 267, true)
-console.log(myLibrary)
+console.log(myLibrary);
+
+openBtn.addEventListener("click", () => {
+    dialog.showModal()
+});
+
+closeBtn.addEventListener("click", () => {
+    dialog.close();
+})
