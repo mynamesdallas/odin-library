@@ -1,8 +1,11 @@
+const myLibrary = [];
+
 function Book(title, author, pages, read = false) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.id = crypto.randomUUID();
 }
 
 Book.prototype.info = function() {
@@ -10,4 +13,10 @@ Book.prototype.info = function() {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`
 }
 
-const book1 = new Book("On the Road", "Jack Karouac", 287, true);
+function addBookToLibrary(title, author, pages, read) {
+    const newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
+}
+
+addBookToLibrary("On the Road", "Jack Karouac", 267, true)
+console.log(myLibrary)
