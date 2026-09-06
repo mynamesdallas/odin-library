@@ -10,15 +10,27 @@
 <body>
     <header>
         <div class="header-top">
-            <h1>The Odin Project: Library</h1>
+            <h1>Our Home Library</h1>
         </div>
         <div class="header-bottom">
-            <label for="bookSearch">Search Library: <input type="text" name="search" id="bookSearch"></label>
-            <button id="searchBtn">Search</button>
+            <div class="search-container">
+                <label for="bookSearch">Search Library: <input type="text" name="search" id="bookSearch" placeholder="Search by Title or Author"></label>
+                <button id="searchBtn">Search</button>
+            </div>
+            <div class="add-container">
+                <button id="addBookBtn">Add Book</button>
+            </div>
         </div>
     </header>
     <div class="content">
-
+        <div class="card">
+            <h2 class="title">Title: On The Road</h2>
+            <h3 class="author">Author: Jack Karouac</h3>
+            <p class="pages">Pages: 257</p>
+            <p class="read">Status: Read</p>
+            <button class="delete">Remove</button>
+            <button class="change-status">Change Status</button>
+        </div>
     </div>
     <footer>
         <p>Powered by <a href="#">myNamesDallas</a></p>

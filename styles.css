@@ -29,17 +29,23 @@ header {
 .header-bottom {
     height: 100%;
     display: inline-flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
+}
+
+.search-container {
+    width: 75%;
 }
 
 .header-bottom input {
     border-radius: 7px;
     padding: 4px;
     margin: 0 4px;
+    width: 50%;
 }
 
-.header-bottom button {
+.header-bottom button,
+.card button {
     padding: 7px 23px;
     border: none;
     border-radius: 5px;
@@ -50,6 +56,22 @@ header {
     height: 100vh;
     width: 100%;
     background-color: lightgray;
+    padding: 2rem;
+}
+
+.content .card {
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    border-radius: 7px;
+    padding: 1rem;
+    line-height: 2rem;
+}
+
+.card button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 footer {
