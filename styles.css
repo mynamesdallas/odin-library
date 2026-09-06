@@ -52,6 +52,35 @@ header {
     cursor: pointer;
 }
 
+dialog {
+    height: 75%;
+    width: 50%;
+    border: none;
+    border-radius: 12px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal-header h2 {
+    text-decoration: underline;
+}
+
+#closeModalBtn {
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
 .content {
     height: 100vh;
     width: 100%;
