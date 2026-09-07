@@ -116,5 +116,5 @@ addBookBtn.addEventListener("click", (e) => {
     bookForm.reset();
 
     
-    console.table(myLibrary)
+    console.log(myLibrary)
 });
