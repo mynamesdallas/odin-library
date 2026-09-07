@@ -90,7 +90,6 @@ addBookBtn.addEventListener("click", (e) => {
 
     removeBtn.addEventListener("click", () => card.remove());
     bookForm.reset();
-    cardTitle.focus();
 
     console.log("Updated Library:", myLibrary);
 });
