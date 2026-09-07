@@ -11,6 +11,9 @@ const pagesInput = document.querySelector("#addPages");
 const readInput = document.querySelector("#addStatus");
 const addBookBtn = document.querySelector("#addBookBtn");
 
+//DOM
+const card = document.querySelector(".card");
+
 const myLibrary = [];
 
 function Book(title, author, pages, read = false) {
@@ -52,6 +55,33 @@ addBookBtn.addEventListener("click", (e) => {
     const read = readInput.value;
 
     addBookToLibrary(title, author, pages, read);
+
+    const cardTitle = document.createElement("h2");
+    const cardAuthor= document.createElement("h3");
+    const cardPages = document.createElement("p");
+    const cardStatus = document.createElement("p");
+    const removeBtn = document.createElement("button");
+    const statusBtn = document.createElement("button");
+
+    cardTitle.textContent = title;
+    cardTitle.classList.add("title");
+
+    cardAuthor.textContent = author;
+    cardAuthor.classList.add("author");
+
+    cardPages.textContent = pages;
+    cardPages.classList.add("pages");
+
+    cardStatus.textContent = read;
+    cardStatus.classList.add("read");
+
+    removeBtn.textContent = "Remove";
+    removeBtn.classList.add("delete");
+
+    statusBtn.textContent = "Change Status";
+    statusBtn.classList.add("change-status");
+
+    card.append(cardTitle, cardAuthor, cardPages, cardStatus, removeBtn, statusBtn)
 
     console.log("Updated Library:", myLibrary);
 });
