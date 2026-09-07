@@ -110,8 +110,13 @@ dialog form input {
 }
 
 .content {
-    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
     width: 100%;
+    gap: 1rem;
     background-color: lightgray;
     padding: 2rem;
 }
@@ -119,7 +124,7 @@ dialog form input {
 .content .card {
     background-color: white;
     width: 250px;
-    height: 250px;
+    height: 300px;
     border-radius: 7px;
     padding: 1rem;
     line-height: 2rem;

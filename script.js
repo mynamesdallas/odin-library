@@ -12,7 +12,7 @@ const readInput = document.querySelector("#addStatus");
 const addBookBtn = document.querySelector("#addBookBtn");
 
 //DOM
-const card = document.querySelector(".card");
+const container = document.querySelector(".content");
 
 const myLibrary = [];
 
@@ -56,6 +56,7 @@ addBookBtn.addEventListener("click", (e) => {
 
     addBookToLibrary(title, author, pages, read);
 
+    const card = document.createElement("div")
     const cardTitle = document.createElement("h2");
     const cardAuthor= document.createElement("h3");
     const cardPages = document.createElement("p");
@@ -63,16 +64,18 @@ addBookBtn.addEventListener("click", (e) => {
     const removeBtn = document.createElement("button");
     const statusBtn = document.createElement("button");
 
-    cardTitle.textContent = title;
+    card.classList.add("card")
+
+    cardTitle.textContent = `Title: ${title}`;
     cardTitle.classList.add("title");
 
-    cardAuthor.textContent = author;
+    cardAuthor.textContent = `Author: ${author}`;
     cardAuthor.classList.add("author");
 
-    cardPages.textContent = pages;
+    cardPages.textContent = `Pages: ${pages}`;
     cardPages.classList.add("pages");
 
-    cardStatus.textContent = read;
+    cardStatus.textContent = `Status: ${read}`;
     cardStatus.classList.add("read");
 
     removeBtn.textContent = "Remove";
@@ -82,6 +85,12 @@ addBookBtn.addEventListener("click", (e) => {
     statusBtn.classList.add("change-status");
 
     card.append(cardTitle, cardAuthor, cardPages, cardStatus, removeBtn, statusBtn)
+
+    container.appendChild(card)
+
+    removeBtn.addEventListener("click", () => card.remove());
+    bookForm.reset();
+    cardTitle.focus();
 
     console.log("Updated Library:", myLibrary);
 });
