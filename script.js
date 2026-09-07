@@ -34,9 +34,6 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
-addBookToLibrary("On the Road", "Jack Karouac", 267, true)
-console.log(myLibrary);
-
 openBtn.addEventListener("click", () => {
     dialog.showModal()
 });
