@@ -51,7 +51,8 @@ addBookBtn.addEventListener("click", (e) => {
     const pages = pagesInput.value;
     const read = readInput.value;
 
-    addBookToLibrary(title, author, pages, read);
+    const newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
 
     const card = document.createElement("div")
     const cardTitle = document.createElement("h2");
@@ -60,6 +61,8 @@ addBookBtn.addEventListener("click", (e) => {
     const cardStatus = document.createElement("p");
     const removeBtn = document.createElement("button");
     const statusBtn = document.createElement("button");
+
+    card.dataset.id = newBook.id;
 
     card.classList.add("card")
 
@@ -85,8 +88,17 @@ addBookBtn.addEventListener("click", (e) => {
 
     container.appendChild(card)
 
-    removeBtn.addEventListener("click", () => card.remove());
+    removeBtn.addEventListener("click", () => {
+        const bookId = card.dataset.id;
+        const bookIndex = myLibrary.findIndex(book => book.id === bookId);
+
+        if (bookIndex !== -1) {
+            myLibrary.splice(bookIndex, 1);
+        }
+
+        card.remove();
+        console.log("Updated Library:", myLibrary);
+    });
     bookForm.reset();
 
-    console.log("Updated Library:", myLibrary);
 });
