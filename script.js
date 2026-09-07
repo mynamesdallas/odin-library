@@ -40,6 +40,7 @@ openBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
     dialog.close();
+    bookForm.reset();
 });
 
 addBookBtn.addEventListener("click", (e) => {
@@ -52,5 +53,5 @@ addBookBtn.addEventListener("click", (e) => {
 
     addBookToLibrary(title, author, pages, read);
 
-    console.log("Updated Library:", myLibrary)
-})
+    console.log("Updated Library:", myLibrary);
+});
