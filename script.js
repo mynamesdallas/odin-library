@@ -35,6 +35,7 @@ Book.prototype.info = function() {
 function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
+    return newBook
 }
 
 function renderFilteredLibrary(booksArray) {
@@ -99,8 +100,7 @@ addBookBtn.addEventListener("click", (e) => {
     const pages = pagesInput.value;
     const read = readInput.value;
 
-    const newBook = new Book(title, author, pages, read);
-    myLibrary.push(newBook);
+    const newBook = addBookToLibrary(title, author, pages, read);
 
     const card = document.createElement("div")
     const cardTitle = document.createElement("h2");
@@ -135,6 +135,20 @@ addBookBtn.addEventListener("click", (e) => {
     card.append(cardTitle, cardAuthor, cardPages, cardStatus, removeBtn, statusBtn)
 
     container.appendChild(card)
+
+    statusBtn.addEventListener("click", () => {
+        const bookId = card.dataset.id;
+        const targetBook = myLibrary.find(book => book.id === bookId);
+
+        if (targetBook) {
+            if (targetBook.read === "read") {
+                targetBook.read = "not read yet";
+            } else {
+                targetBook.read = "read";
+            }
+            cardStatus.textContent = `Status: ${targetBook.read}`
+        }
+    })
 
     removeBtn.addEventListener("click", () => {
         const bookId = card.dataset.id;
