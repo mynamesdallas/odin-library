@@ -66,6 +66,10 @@ header {
     width: 75%;
 }
 
+.header-bottom form {
+    width: 100%;
+}
+
 .header-bottom input {
     border-radius: 7px;
     border: 1px solid lightgray;
