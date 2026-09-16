@@ -26,6 +26,35 @@ header {
     padding: 1.3rem;
 }
 
+.header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-top ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.header-top li {
+    list-style: none;
+}
+
+.header-top a {
+    color: #000000;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.header-top a:hover {
+    background-color: #f3f4f6;
+    color: #1f2937; 
+}
+
 .header-bottom {
     height: 100%;
     display: inline-flex;
