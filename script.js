@@ -13,6 +13,9 @@ const addBookBtn = document.querySelector("#addBookBtn");
 
 //DOM
 const container = document.querySelector(".content");
+const allBooksBtn = document.querySelector("#allBooksBtn");
+const readBooksBtn = document.querySelector("#readBooksBtn");
+const unreadBooksBtn = document.querySelector("#unreadBooksBtn");
 
 const myLibrary = [];
 
@@ -32,6 +35,51 @@ Book.prototype.info = function() {
 function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
+}
+
+function renderFilteredLibrary(booksArray) {
+    container.textContent = "";
+
+    booksArray.forEach((book) => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.dataset.id = book.id;
+
+        const title = document.createElement("h2");
+        title.classList.add("title");
+        title.textContent = `Title: ${book.title}`;
+
+        const author = document.createElement("h3");
+        author.classList.add("author");
+        author.textContent = `Author: ${book.author}`;
+
+        const pages = document.createElement("p");
+        pages.classList.add("pages");
+        pages.textContent = `Pages: ${book.pages}`;
+
+        const read = document.createElement("p");
+        read.classList.add("read");
+        read.textContent = `Status: ${book.read}`;
+
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.classList.add("delete");
+
+        const statusBtn = document.createElement("button");
+        statusBtn.textContent = "Change Status";
+        statusBtn.classList.add("change-status");
+
+        card.append(title, author, pages, read, removeBtn, statusBtn);
+        container.appendChild(card);
+
+        removeBtn.addEventListener("click", () => {
+            const bookIndex = myLibrary.findIndex(b => b.id === book.id);
+            if (bookIndex !== -1) {
+                myLibrary.splice(bookIndex, 1);
+            }
+            card.remove();
+        });
+    });
 }
 
 openBtn.addEventListener("click", () => {
@@ -102,3 +150,47 @@ addBookBtn.addEventListener("click", (e) => {
     bookForm.reset();
 
 });
+
+allBooksBtn.addEventListener("click", () => {
+    renderFilteredLibrary(myLibrary)
+})
+
+readBooksBtn.addEventListener("click", () => {
+
+    const readBooks = myLibrary.filter(book => book.read === true);
+    renderFilteredLibrary(readBooks)
+})
+
+unreadBooksBtn.addEventListener("click", () => {
+
+    const unreadBooks = myLibrary.filter(book => book.read === false);
+    renderFilteredLibrary(unreadBooks)
+})
+
+const searchForm = document.querySelector("form");
+const searchInput = document.querySelector("#bookSearch");
+
+searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const query = searchInput.value.trim().toLowerCase();
+    container.textContent = "";
+
+    if (!query) {
+        renderFilteredLibrary(myLibrary);
+        return
+    }
+
+    const searchResults = myLibrary.filter(book => {
+        return book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query);
+    });
+    renderFilteredLibrary(searchResults)
+})
+
+addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
+addBookToLibrary("Dune", "Frank Herbert", 617, false);
+addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, true);
+addBookToLibrary("The Matrix", "Lana Wachowski", 120, false);
+addBookToLibrary("Frankenstein", "Mary Shelley", 260, true);
+
+renderFilteredLibrary(myLibrary)
