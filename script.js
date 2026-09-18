@@ -60,7 +60,7 @@ function renderFilteredLibrary(booksArray) {
 
         const read = document.createElement("p");
         read.classList.add("read");
-        read.textContent = `Status: ${book.read}`;
+        read.textContent = `Status: ${book.read ? "Read" : "Not Read Yet"}`;
 
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
