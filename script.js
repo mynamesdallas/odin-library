@@ -210,10 +210,4 @@ searchForm.addEventListener("submit", (e) => {
     renderFilteredLibrary(searchResults)
 })
 
-addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
-addBookToLibrary("Dune", "Frank Herbert", 617, false);
-addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, true);
-addBookToLibrary("The Matrix", "Lana Wachowski", 120, false);
-addBookToLibrary("Frankenstein", "Mary Shelley", 260, true);
-
 renderFilteredLibrary(myLibrary)
