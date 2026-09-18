@@ -28,7 +28,7 @@ function Book(title, author, pages, read = false) {
 }
 
 Book.prototype.info = function() {
-    const readStatus = this.read ? "read" : "not read yet";
+    const readStatus = this.read ? "Read" : "Not Read Yet";
     return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`
 }
 
