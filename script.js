@@ -80,6 +80,15 @@ function renderFilteredLibrary(booksArray) {
             }
             card.remove();
         });
+
+        statusBtn.addEventListener("click", () => {
+            const updateStatus = myLibrary.find(b => b.id === book.id);
+            if (updateStatus) {
+                updateStatus.read = !updateStatus.read;
+
+                read.textContent = `Status: ${updateStatus.read ? "Read" : "Not Read Yet"}`
+            } 
+        })
     });
 }
 
