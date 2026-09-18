@@ -111,6 +111,8 @@ addBookBtn.addEventListener("click", (e) => {
 
     addBookToLibrary(title, author, pages, isRead);
     renderFilteredLibrary(myLibrary);
+
+    bookForm.reset();
 });
 
 allBooksBtn.addEventListener("click", () => {
